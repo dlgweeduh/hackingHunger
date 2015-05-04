@@ -31,7 +31,7 @@ function bodyBackground(itemsTopValues) {
 		servicesNumber = itemsTopValues.length;
 	$.each(itemsTopValues, function(key, value){
 		if ( (itemsTopValues[key] <= topPosition && itemsTopValues[key+1] > topPosition) || (itemsTopValues[key] <= topPosition && key+1 == servicesNumber ) ) {	
-			$('body').removeClass('new-color-'+(key-1)+' new-color-'+(key+1)).addClass('new-color-'+key);
+			$('li').removeClass('new-color-'+(key-1)+' new-color-'+(key+1)).addClass('new-color-'+key);
 		}
 	});
 }
