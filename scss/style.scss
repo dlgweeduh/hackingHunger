@@ -55,15 +55,6 @@ Main components
 -------------------------------- */
 
 
-html, body {
-	height: 100%;
-}
-
-section {	
-}
-
-.foodSection {
-}
 
 @include MQ(L) {
 	section.new-color-1::before {
@@ -102,15 +93,36 @@ section::after {
 	background-color: $color-2;
 }
 
+
+header {
+	position: relative;
+	min-height:1000px;
+	background-color: $color-1;
+	background-image: url("../img/torontoDawnR.jpg");
+	z-index: 2;
+	background-size: cover;
+
+	h1 {
+		position: absolute;
+		@include center;
+		width: 90%;
+		max-width: $L;
+		text-align: center;
+		color: $color-6;
+		@include font-size(26px);
+		font-family: $fontRg;
+	}
+}
+
 .hungerVisuals {
 	position: relative;
-	height: 50%;
-	z-index: 2;
 	background-color: $color-1;
 	img{
 		margin: 0 auto;
 		display: block;
 		padding: 100px;
+		width: 100%;
+		padding: 10em;
 	}
 	h1 {
 		position: absolute;
@@ -124,15 +136,12 @@ section::after {
 }
 
 .separator {
-  background-position-x: initial;
-  background-position-y: initial;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat-x: no-repeat;
-  background-repeat-y: no-repeat;
-  background-origin: initial;
-  background-clip: initial;
-  min-height: 1200px;    
+	position: relative;
+	min-height:1000px;
+	background-color: $color-1;
+	background-image: url("../img/torontoDawnR.jpg");
+	background-size: cover;
+	min-height: 900px;    
   // @include background-size;
   &.separator1 {
     background-image: url('../img/torontoDawnR.jpg');
@@ -149,6 +158,18 @@ section::after {
       background-position-y: 30%;
     }    
   }
+  &.separator3 {
+    background-image: url('../img/torontoDuskR.jpg') ;   
+    @media screen and (min-width:1050px) {
+      background-position-y: 30%;
+    }    
+  } 
+  &.separator4 {
+    background-image: url('../img/torontoNightR.jpg') ;   
+    @media screen and (min-width:1050px) {
+      background-position-y: 30%;
+    }    
+  }    
 }
 
 .cd-service {
@@ -245,19 +266,19 @@ section::after {
 		}
 
 		&.cd-service-1::before {
-			background-image: url('../img/food1Large.svg');
-		}
-
-		&.cd-service-2::before {
 			background-image: url('../img/food6Large.svg');
 		}
 
-		&.cd-service-3::before {
+		&.cd-service-2::before {
 			background-image: url('../img/food2Large.svg');
+		}
+
+		&.cd-service-3::before {
+			background-image: url('../img/food7Large.svg');
 		}
 		
 		&.cd-service-4::before {
-			background-image: url('../img/food7Large.svg');
+			background-image: url('../img/food1Large.svg');
 		}
 
 		h2, p {
@@ -284,9 +305,41 @@ section::after {
 	}
 }
 
+/* Sponsors Section */
+.sponsor-logo {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+	-moz-transition: all 200ms ease;
+	-webkit-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+	width: 70%;
+}
+.sponsor-logo:hover {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	-moz-opacity: 0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+}
+
+.eventInfo {
+	background-color: blue;
+
+}
 
 
+#map {
+	background: #4C5D67;
+	padding: 0;
+}
 
+/* Google Map */
+#map_canvas {
+	width: 100%;
+	height: 400px;
+}
 
 footer {
 	position: relative;
