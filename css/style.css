@@ -39,16 +39,16 @@ Main components
 
 -------------------------------- */
 @media only screen and (min-width: 1170px) {
-  section.new-color-1::before {
+  .foodSection.new-color-1::before {
     background-color: #c06c69; }
 
-  section.new-color-2::before {
+  .foodSection.new-color-2::before {
     background-color: #bf69c0; }
 
-  section.new-color-3::before {
+  .foodSection.new-color-3::before {
     background-color: #699ec0; } }
-section::before, section::after {
-  /* the 2 underneath colored sections */
+.foodSection::before, .foodSection::after {
+  /* the 2 underneath colored .foodSections */
   content: '';
   position: fixed;
   /* trick to remove some annoying flickering on webkit browsers */
@@ -64,16 +64,20 @@ section::before, section::after {
   height: 50%;
   z-index: -1; }
 
-section::before {
+.foodSection::before {
   top: 0;
   background-color: #f4bd89;
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
   transition: all 0.8s; }
 
-section::after {
+.foodSection::after {
   top: 50%;
   background-color: #71495b; }
+
+.foodSection.hidden::after {
+  display: none;
+  content: none; }
 
 header {
   position: relative;
@@ -161,7 +165,7 @@ header {
 
 .cd-service {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   min-height: 50px;
   margin-left: 56px;
   background-color: #3e253c;
@@ -244,27 +248,6 @@ header {
         color: #ffffff; }
       .cd-service.focus p {
         color: rgba(255, 255, 255, 0.5); } }
-
-/* Sponsors Section */
-.sponsor-logo {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  -moz-opacity: 1;
-  -khtml-opacity: 1;
-  opacity: 1;
-  -moz-transition: all 200ms ease;
-  -webkit-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
-  transition: all 200ms ease;
-  width: 70%; }
-
-.sponsor-logo:hover {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  -moz-opacity: 0.5;
-  -khtml-opacity: 0.5;
-  opacity: 0.5; }
-
-.eventInfo {
-  background-color: blue; }
 
 #map {
   background: #4C5D67;

@@ -27,11 +27,25 @@ function updateOnFocusItem(items) {
 }
 
 function bodyBackground(itemsTopValues) {
-	var topPosition = $(window).scrollTop() + $(window).height()/2,
+	var topPosition = $(window).scrollTop() + $(window).height()/2	,
 		servicesNumber = itemsTopValues.length;
 	$.each(itemsTopValues, function(key, value){
 		if ( (itemsTopValues[key] <= topPosition && itemsTopValues[key+1] > topPosition) || (itemsTopValues[key] <= topPosition && key+1 == servicesNumber ) ) {	
-			$('section').removeClass('new-color-'+(key-1)+' new-color-'+(key+1)).addClass('new-color-'+key);
+			$('.foodSection').removeClass('new-color-'+(key-1)+' new-color-'+(key+1)).addClass('new-color-'+key);
 		}
 	});
+	$(function() {
+	    //caches a jQuery object containing the header element
+	    var header = $(".foodSection");
+	    $(window).scroll(function() {
+	        var scroll = $(window).scrollTop();
+	        if (scroll > 5000) {
+	            header.removeClass('foodSection').addClass("hidden");
+	        } else {
+	            header.removeClass("hidden").addClass('foodSection');
+	        }
+	    });
+	});
 }
+// http://stackoverflow.com/questions/7778580/how-to-find-the-vertical-distance-from-top-in-px-of-an-element-using-jquery
+// var viewableOffset = $("#li.test").offset().top - $(window).scrollTop();

@@ -29,6 +29,7 @@ body {
 	background-color: $color-1;
 }
 
+
 /* -------------------------------- 
 
 Modules - reusable parts of our design
@@ -57,21 +58,21 @@ Main components
 
 
 @include MQ(L) {
-	section.new-color-1::before {
+	.foodSection.new-color-1::before {
 		background-color: $color-4;
 	}
 
-	section.new-color-2::before {
+	.foodSection.new-color-2::before {
 		background-color: $color-5;
 	}
 
-	section.new-color-3::before {
+	.foodSection.new-color-3::before {
 		background-color: $color-6;
 	}
 }
 
-section::before, section::after {
-	/* the 2 underneath colored sections */
+.foodSection::before, .foodSection::after {
+	/* the 2 underneath colored .foodSections */
 	content: '';
 	position: fixed;
 	/* trick to remove some annoying flickering on webkit browsers */
@@ -82,15 +83,19 @@ section::before, section::after {
 	z-index: -1;
 }
 
-section::before {
+.foodSection::before {
 	top: 0;
 	background-color: $color-3;
 	@include transition(all .8s);
 }
 
-section::after {
+.foodSection::after {
 	top: 50%;
 	background-color: $color-2;
+}
+.foodSection.hidden::after {
+	display: none;
+	content: none;
 }
 
 
@@ -174,7 +179,7 @@ header {
 
 .cd-service {
 	position: relative;
-	z-index: 2;
+	z-index: 1;
 	min-height: $icon-small-height;
 	margin-left: $icon-small-width;
 	background-color: $color-1;
@@ -305,29 +310,6 @@ header {
 	}
 }
 
-/* Sponsors Section */
-.sponsor-logo {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	-moz-opacity: 1;
-	-khtml-opacity: 1;
-	opacity: 1;
-	-moz-transition: all 200ms ease;
-	-webkit-transition: all 200ms ease;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
-	width: 70%;
-}
-.sponsor-logo:hover {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-	-moz-opacity: 0.5;
-	-khtml-opacity: 0.5;
-	opacity: 0.5;
-}
-
-.eventInfo {
-	background-color: blue;
-
-}
 
 
 #map {
